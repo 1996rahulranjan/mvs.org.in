@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MVS Membership Card Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#eef2f7;padding:20px}
+.container{display:flex;gap:20px;flex-wrap:wrap}
+.form{width:340px;background:#fff;padding:20px;border-radius:15px}
+input,button{width:100%;padding:12px;margin-top:10px}
+button{cursor:pointer}
+.card{position:relative;width:1365px;height:1024px;overflow:hidden}
+.template{position:absolute;inset:0;width:100%;height:100%}
+#memberPhoto{
+    position:absolute;
+    left:60px;
+    top:185px;
+    width:285px;
+    height:420px;
+    object-fit:cover;
+    border-radius:15px;
+}
+.field{position:absolute;color:#002b6f}
+#cardName{
+    left:565px;
+    top:235px;
+    width:520px;
+    font-size:34px;
+    font-weight:700;
+}
+#cardMemberId{left:565px;top:345px;font-size:28px;width:520px}
+#cardMobile{left:565px;top:445px;font-size:28px;width:520px}
+#cardAddress{
+    left:565px;
+    top:555px;
+    width:520px;
+    font-size:26px;
+}
+#cardDistrict{
+    left:565px;
+    top:660px;
+    width:520px;
+    font-size:26px;
+}
+#cardState{
+    position:absolute;
+    left:760px;
+    top:915px;
+    font-size:26px;
+    font-weight:600;
+    color:#000;
+}
+
+#cardDate{
+    position:absolute;
+    left:1230px;
+    top:915px;
+    font-size:26px;
+    font-weight:600;
+    color:#000;
+}
+
+#qrcode{
+    position:absolute;
+    left:1135px;
+    top:315px;
+    width:180px;
+    height:180px;
+}
+
+#qrMemberId{
+    position:absolute;
+    left:1115px;
+    top:515px;
+    width:230px;
+    text-align:center;
+    color:#003b8f;
+    font-size:18px;
+    font-weight:700;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="form">
+<h2>MVS Membership Form</h2>
+<input id="name" placeholder="Member Name">
+<input id="mobile" placeholder="Mobile Number">
+<input id="address" placeholder="Address">
+<input id="district" placeholder="District">
+<input id="state" placeholder="State">
+<input id="photo" type="file" accept="image/*">
+<button onclick="generateCard()">Generate Card</button>
+<button onclick="downloadCard()">Download Card</button>
+<p>Save template image as <b>mvs-template.png</b></p>
+</div>
+
+<div style="overflow:auto">
+<div id="card" class="card">
+<img src="mvs-template.png" class="template">
+<img id="memberPhoto" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+<div id="cardName" class="field">Member Name</div>
+<div id="cardMemberId" class="field">MVS-2026-001</div>
+<div id="cardMobile" class="field"></div>
+<div id="cardAddress" class="field"></div>
+<div id="cardDistrict" class="field"></div>
+<div id="cardState" class="field"></div>
+<div id="cardDate" class="field"></div>
+<div id="qrcode"></div>
+<div id="qrMemberId">MVS-2026-001</div>
+</div>
+</div>
+</div>
+
+<script>
+let currentID="";
+
+function generateMembershipID(){
+ let n=Number(localStorage.getItem("mvsLastNumber")||0)+1;
+ localStorage.setItem("mvsLastNumber",n);
+ return "MVS-2026-"+String(n).padStart(3,"0");
+}
+
+function generateCard(){
+ if(!currentID){ currentID=generateMembershipID(); }
+
+ document.getElementById("cardName").innerText=document.getElementById("name").value||"Not Provided";
+ document.getElementById("cardMemberId").innerText=currentID;
+ document.getElementById("qrMemberId").innerText=currentID;
+ document.getElementById("cardMobile").innerText=document.getElementById("mobile").value||"Not Provided";
+ document.getElementById("cardAddress").innerText=document.getElementById("address").value||"Not Provided";
+ document.getElementById("cardDistrict").innerText=document.getElementById("district").value||"Not Provided";
+ document.getElementById("cardState").innerText=document.getElementById("state").value||"Not Provided";
+
+ let d=new Date();
+ document.getElementById("cardDate").innerText=String(d.getDate()).padStart(2,"0")+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+d.getFullYear();
+
+ document.getElementById("qrcode").innerHTML="";
+ new QRCode(document.getElementById("qrcode"),{
+  text:`ID:${currentID} Name:${document.getElementById("name").value} Mobile:${document.getElementById("mobile").value}`,
+  width:180,height:180
+ });
+
+ let file=document.getElementById("photo").files[0];
+ if(file){
+   let reader=new FileReader();
+   reader.onload=e=>document.getElementById("memberPhoto").src=e.target.result;
+   reader.readAsDataURL(file);
+ }
+}
+
+function downloadCard(){
+
+ html2canvas(document.getElementById("card"),{
+    scale:2,
+    useCORS:true,
+    allowTaint:true,
+    backgroundColor:null,
+    width:1365,
+    height:1024
+ }).then(canvas=>{
+
+    let a=document.createElement("a");
+
+    a.download=currentID+".png";
+
+    a.href=canvas.toDataURL("image/png",1.0);
+
+    a.click();
+
+ });
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MVS Internship Program</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:#f5f7fb;
+
+overflow-x:hidden;
+
+color:#222;
+
+}
+
+/* Hero */
+
+.hero{
+
+background:
+linear-gradient(135deg,#081c42,#0a2d62,#1d4ed8);
+
+padding:80px 25px;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+top:-250px;
+
+left:-150px;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+right:-180px;
+
+bottom:-200px;
+
+}
+
+.hero-content{
+
+max-width:1100px;
+
+margin:auto;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.logo img{
+
+width:130px;
+
+margin-bottom:25px;
+
+}
+
+.hero h1{
+
+font-size:58px;
+
+color:#fff;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+max-width:900px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#d7d7d7;
+
+}
+
+/* Section */
+
+.section{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:80px 25px;
+
+}
+
+.title{
+
+font-size:42px;
+
+text-align:center;
+
+margin-bottom:50px;
+
+color:#0a2d62;
+
+}
+
+/* Cards */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:#fff;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+color:#0a2d62;
+
+}
+
+.card p{
+
+line-height:1.9;
+
+color:#555;
+
+}
+
+/* Benefits */
+
+.benefits{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.benefit{
+
+background:#fff;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.benefit h4{
+
+font-size:25px;
+
+margin-bottom:15px;
+
+color:#0a2d62;
+
+}
+
+/* CTA */
+
+.cta{
+
+background:#081c42;
+
+padding:70px 25px;
+
+text-align:center;
+
+}
+
+.cta h2{
+
+font-size:45px;
+
+color:#fff;
+
+margin-bottom:25px;
+
+}
+
+.cta p{
+
+font-size:20px;
+
+color:#d9d9d9;
+
+max-width:900px;
+
+margin:auto;
+
+line-height:1.9;
+
+margin-bottom:40px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:18px 40px;
+
+background:#fff;
+
+color:#0a2d62;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:700;
+
+border-radius:50px;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/* Contact */
+
+.contact{
+
+padding:80px 25px;
+
+background:#fff;
+
+}
+
+.contact-box{
+
+max-width:900px;
+
+margin:auto;
+
+background:#f5f7fb;
+
+padding:50px;
+
+border-radius:25px;
+
+}
+
+.contact-box h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:#0a2d62;
+
+}
+
+.contact-box p{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+.footer{
+
+text-align:center;
+
+padding:25px;
+
+background:#081c42;
+
+color:#fff;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.title{
+
+font-size:32px;
+
+}
+
+.cta h2{
+
+font-size:32px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="logo">
+
+<img src="mvs_logo.png">
+
+</div>
+
+<h1>MVS Internship Program</h1>
+
+<p>
+
+Mulnivasi Vidyarthi Sangh (MVS) proudly launches its Internship Program to support students from SC, ST and OBC communities by providing practical experience, leadership opportunities and skill development.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section">
+
+<h2 class="title">Who Can Apply?</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🎓 Eligibility</h3>
+
+<p>
+
+Students belonging to SC, ST and OBC categories from schools, colleges and universities can apply.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🚀 Career Growth</h3>
+
+<p>
+
+Gain practical experience, leadership skills, teamwork exposure and networking opportunities.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 National Platform</h3>
+
+<p>
+
+Become a part of a nationwide student organization and contribute to impactful initiatives.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BENEFITS -->
+
+<section class="section">
+
+<h2 class="title">Internship Benefits</h2>
+
+<div class="benefits">
+
+<div class="benefit">
+
+<h4>📚 Skill Development</h4>
+
+<p>Communication, management and professional skills.</p>
+
+</div>
+
+<div class="benefit">
+
+<h4>🤝 Team Collaboration</h4>
+
+<p>Work with dedicated MVS members.</p>
+
+</div>
+
+<div class="benefit">
+
+<h4>🏆 Leadership Experience</h4>
+
+<p>Learn event management and leadership.</p>
+
+</div>
+
+<div class="benefit">
+
+<h4>🌐 Networking</h4>
+
+<p>Build valuable connections.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FORM -->
+
+<section class="cta">
+
+<h2>Become An Intern</h2>
+
+<p>
+
+If you want to be an intern, please fill out the Google Form. Our team members will contact you soon.
+
+</p>
+
+<a href="https://forms.gle/YOUR_GOOGLE_FORM"
+
+target="_blank"
+
+class="btn">
+
+Apply For Internship
+
+</a>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+<div class="contact-box">
+
+<h2>Further Queries? Contact Us</h2>
+
+<p>
+
+📍 Address: M6F5+JCG, Dr Bhim Rao Ambedkar Marg, Kabir Basti, Delhi, 110007
+
+</p>
+
+<p>
+
+📞 Phone Number: +91 6204133057
+
+</p>
+
+<p>
+
+💬 WhatsApp Number: +91 6204133057
+
+</p>
+
+<p>
+
+☎️ Office Number: +91 9318363969
+
+</p>
+
+</div>
+
+</section>
+
+<div class="footer">
+
+© 2026 Mulnivasi Vidyarthi Sangh (MVS)
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Join As MVS Membership</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(135deg,#071a3d,#0a2d62,#153b80);
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+position:relative;
+
+}
+
+/* Background circles */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:rgba(255,255,255,0.06);
+
+border-radius:50%;
+
+top:-120px;
+
+left:-100px;
+
+}
+
+body::after{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+
+height:400px;
+
+background:rgba(255,255,255,0.05);
+
+border-radius:50%;
+
+bottom:-150px;
+
+right:-150px;
+
+}
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:60px 25px;
+
+text-align:center;
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* Logo */
+
+.logo img{
+
+width:130px;
+
+margin-bottom:25px;
+
+}
+
+/* Heading */
+
+h1{
+
+font-size:58px;
+
+color:#fff;
+
+margin-bottom:20px;
+
+font-weight:800;
+
+}
+
+.description{
+
+max-width:850px;
+
+margin:auto;
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#d8d8d8;
+
+margin-bottom:60px;
+
+}
+
+/* Cards */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+/* Card */
+
+.card{
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,0.15);
+
+border-radius:25px;
+
+padding:40px 30px;
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.icon{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.card h2{
+
+color:#fff;
+
+font-size:30px;
+
+margin-bottom:18px;
+
+}
+
+.card p{
+
+color:#ddd;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+}
+
+/* Button */
+
+.btn{
+
+display:inline-block;
+
+padding:15px 35px;
+
+text-decoration:none;
+
+background:#fff;
+
+color:#0a2d62;
+
+font-weight:700;
+
+border-radius:50px;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:scale(1.08);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:38px;
+
+}
+
+.description{
+
+font-size:16px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+
+<img src="mvs_logo.png" alt="MVS Logo">
+
+</div>
+
+<h1>Join As MVS Membership</h1>
+
+<p class="description">
+
+Become a part of Mulnivasi Vidyarthi Sangh and join a nationwide movement of students working towards education, leadership, unity and social empowerment.
+
+Choose the membership category below and complete your registration.
+
+</p>
+
+<div class="cards">
+
+<!-- New -->
+
+<div class="card">
+
+<div class="icon">🆕</div>
+
+<h2>New Membership</h2>
+
+<p>
+
+Register yourself as a new member of MVS.
+
+</p>
+
+<a href="https://forms.gle/7r1DstPYm4Jdz3Fn8"
+
+target="_blank"
+
+class="btn">
+
+Open Form
+
+</a>
+
+</div>
+
+<!-- Old -->
+
+<div class="card">
+
+<div class="icon">👥</div>
+
+<h2>Old Membership</h2>
+
+<p>
+
+Already an MVS member? Update your information here.
+
+</p>
+
+<a href="https://forms.gle/your_old_form"
+
+target="_blank"
+
+class="btn">
+
+Open Form
+
+</a>
+
+</div>
+
+<!-- Renewal -->
+
+<div class="card">
+
+<div class="icon">🔄</div>
+
+<h2>Renewal Membership</h2>
+
+<p>
+
+Renew and continue your MVS membership.
+
+</p>
+
+<a href="https://forms.gle/your_renewal_form"
+
+target="_blank"
+
+class="btn">
+
+Open Form
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>President's Message</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.president-section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.page-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.page-title h1{
+    font-size:42px;
+    color:#0a2342;
+    margin-bottom:10px;
+}
+
+.page-title p{
+    color:#777;
+    font-size:18px;
+}
+
+.president-card{
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    display:flex;
+    gap:40px;
+    padding:40px;
+    align-items:flex-start;
+}
+
+.president-image{
+    width:320px;
+    text-align:center;
+}
+
+.president-image img{
+    width:100%;
+    border-radius:15px;
+    border:5px solid #0a2342;
+    object-fit:cover;
+}
+
+.president-image h3{
+    margin-top:20px;
+    font-size:26px;
+    color:#0a2342;
+}
+
+.president-image span{
+    color:#c89b3c;
+    font-weight:600;
+    font-size:16px;
+}
+
+.president-message{
+    flex:1;
+}
+
+.president-message h2{
+    font-size:32px;
+    color:#0a2342;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.president-message h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#c89b3c;
+    display:block;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+.president-message p{
+    font-size:17px;
+    color:#444;
+    line-height:1.9;
+    margin-bottom:18px;
+    text-align:justify;
+}
+
+.signature{
+    margin-top:30px;
+    border-top:2px solid #e0e0e0;
+    padding-top:20px;
+}
+
+.signature strong{
+    color:#0a2342;
+    font-size:22px;
+}
+
+.signature p{
+    margin:5px 0 0;
+    color:#777;
+}
+
+@media(max-width:768px){
+
+    .page-title h1{
+        font-size:32px;
+    }
+
+    .president-card{
+        flex-direction:column;
+        padding:25px;
+    }
+
+    .president-image{
+        width:100%;
+    }
+
+    .president-message h2{
+        font-size:26px;
+    }
+
+    .president-message p{
+        text-align:left;
+    }
+}
+</style>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.president-section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.page-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.page-title h1{
+    font-size:42px;
+    color:#0a2342;
+    margin-bottom:10px;
+}
+
+.page-title p{
+    color:#777;
+    font-size:18px;
+}
+
+.president-card{
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    display:flex;
+    gap:40px;
+    padding:40px;
+    align-items:flex-start;
+}
+
+.president-image{
+    width:320px;
+    text-align:center;
+}
+
+.president-image img{
+    width:100%;
+    border-radius:15px;
+    border:5px solid #0a2342;
+    object-fit:cover;
+}
+
+.president-image h3{
+    margin-top:20px;
+    font-size:26px;
+    color:#0a2342;
+}
+
+.president-image span{
+    color:#c89b3c;
+    font-weight:600;
+    font-size:16px;
+}
+
+.president-message{
+    flex:1;
+}
+
+.president-message h2{
+    font-size:32px;
+    color:#0a2342;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.president-message h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#c89b3c;
+    display:block;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+.president-message p{
+    font-size:17px;
+    color:#444;
+    line-height:1.9;
+    margin-bottom:18px;
+    text-align:justify;
+}
+
+.signature{
+    margin-top:30px;
+    border-top:2px solid #e0e0e0;
+    padding-top:20px;
+}
+
+.signature strong{
+    color:#0a2342;
+    font-size:22px;
+}
+
+.signature p{
+    margin:5px 0 0;
+    color:#777;
+}
+
+@media(max-width:768px){
+
+    .page-title h1{
+        font-size:32px;
+    }
+
+    .president-card{
+        flex-direction:column;
+        padding:25px;
+    }
+
+    .president-image{
+        width:100%;
+    }
+
+    .president-message h2{
+        font-size:26px;
+    }
+
+    .president-message p{
+        text-align:left;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<section class="president-section">
+    <div class="container">
+
+        <div class="page-title">
+            <h1>Message from the President</h1>
+            <p>Leadership • Vision • Commitment</p>
+        </div>
+
+        <div class="president-card">
+
+            <div class="president-image">
+                <img src="H:\MVS File\Website\MVS CEC MEMBER IMAGES\BAMCEF National President.png" alt="President Photo">
+
+                <h3> Mn. Sanjay Mohite </h3>
+                <span>BAMCEF National President</span>
+            </div>
+
+            <div class="president-message">
+
+                <h2>BAMCEF President's Message</h2>
+
+                <p>
+                    Welcome to our organization. It is with great pride and
+                    responsibility that I extend my heartfelt greetings to all
+                    members, supporters, and well-wishers.
+                </p>
+
+                <p>
+                    Our vision is to create positive change through dedication,
+                    innovation, and collective effort. We believe in building a
+                    stronger future based on trust, unity, and service.
+                </p>
+
+                <p>
+                    I sincerely thank everyone for their continued support and
+                    commitment. Together, we will continue to achieve new milestones
+                    and serve society with integrity and purpose.
+                </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br> 
+    </div>
+        <div class="president-card">
+
+            <div class="president-image">
+                <img src="H:\MVS File\Website\MVS CEC MEMBER IMAGES\Prabhakar Prajapati-President.png" alt="President Photo">
+
+                <h3>Mn. Prabhakar Prajapati </h3>
+                <span>National President MVS</span>
+            </div>
+
+            <div class="president-message">
+
+                <h2>MVS President's Message</h2>
+
+                <p>
+                    Welcome to our organization. It is with great pride and
+                    responsibility that I extend my heartfelt greetings to all
+                    members, supporters, and well-wishers.
+                </p>
+
+                <p>
+                    Our vision is to create positive change through dedication,
+                    innovation, and collective effort. We believe in building a
+                    stronger future based on trust, unity, and service.
+                </p>
+
+                <p>
+                    I sincerely thank everyone for their continued support and
+                    commitment. Together, we will continue to achieve new milestones
+                    and serve society with integrity and purpose.
+                </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

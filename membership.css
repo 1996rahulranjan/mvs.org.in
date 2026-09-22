@@ -1,0 +1,201 @@
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    padding:30px;
+}
+
+.container{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.form-box{
+    width:350px;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-box h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#123b82;
+}
+
+.form-box input,
+.form-box select,
+.form-box button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.form-box button{
+    background:#123b82;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.form-box button:hover{
+    background:#0b2a5e;
+}
+
+/* CARD DESIGN */
+
+.card{
+    width:900px;
+    min-height:550px;
+    background:white;
+    border-radius:25px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    top:-100px;
+    right:-100px;
+    width:250px;
+    height:250px;
+    background:#123b82;
+    border-radius:50%;
+}
+
+.card::after{
+    content:'';
+    position:absolute;
+    bottom:-150px;
+    left:-100px;
+    width:350px;
+    height:350px;
+    background:#123b82;
+    border-radius:50%;
+}
+
+.header{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding-top:20px;
+}
+
+.header img{
+    height:70px;
+}
+
+.title{
+    text-align:center;
+    margin-top:20px;
+    font-size:55px;
+    font-weight:900;
+    color:#123b82;
+}
+
+.content{
+    display:flex;
+    padding:20px 40px;
+    gap:40px;
+}
+
+.left{
+    width:260px;
+}
+
+.photo-box{
+    border:4px solid #123b82;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.photo-box img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.barcode{
+    background:white;
+    margin-top:15px;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.barcode img{
+    width:100%;
+}
+
+.right{
+    flex:1;
+}
+
+.detail{
+    margin-bottom:20px;
+}
+
+.label{
+    font-size:18px;
+    font-weight:bold;
+    color:#123b82;
+}
+
+.value{
+    font-size:28px;
+}
+
+.info-box{
+    border:2px solid #123b82;
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.info-head{
+    background:#123b82;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.info-body{
+    text-align:center;
+    padding:15px;
+    font-size:22px;
+}
+
+.signature{
+    text-align:right;
+    margin-top:30px;
+    font-size:40px;
+    font-family:cursive;
+}
+
+.footer{
+    text-align:center;
+    padding-bottom:15px;
+    color:#123b82;
+    font-weight:bold;
+}
+
+.download-btn{
+    margin-top:15px;
+    background:#28a745 !important;
+}
+</style>

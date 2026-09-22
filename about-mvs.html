@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About MVS</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================
+   RESET
+========================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+font-family:'Manrope',sans-serif;
+background:linear-gradient(135deg,#f8fafc,#eef6ff);
+color:#1e293b;
+line-height:2;
+overflow-x:hidden;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:5px;
+width:0;
+background:linear-gradient(90deg,#2563eb,#38bdf8);
+z-index:9999;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+max-width:1500px;
+margin:auto;
+padding:30px;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+.hero,
+.card{
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.7);
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.08);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+border-radius:32px;
+padding:60px 40px;
+margin-bottom:25px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+/* Hero Background Glow */
+
+.hero::before{
+content:"";
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+background:rgba(37,99,235,.12);
+
+border-radius:50%;
+
+top:-120px;
+left:-120px;
+
+filter:blur(80px);
+}
+
+.hero::after{
+content:"";
+
+position:absolute;
+
+width:300px;
+height:300px;
+
+background:rgba(56,189,248,.10);
+
+border-radius:50%;
+
+bottom:-100px;
+right:-100px;
+
+filter:blur(80px);
+}
+
+/* =========================
+   LEADERS
+========================= */
+.hero-leaders{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+gap:35px;
+flex-wrap:wrap;
+
+margin-bottom:40px;
+
+position:relative;
+z-index:2;
+}
+
+.leader{
+text-align:center;
+max-width:150px;
+}
+
+.leader img{
+width:120px;
+height:120px;
+
+object-fit:cover;
+
+border-radius:24px;
+
+padding:4px;
+
+background:#fff;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.12);
+
+transition:.35s ease;
+}
+
+.leader img:hover{
+transform:
+translateY(-8px)
+scale(1.05);
+
+box-shadow:
+0 20px 40px rgba(37,99,235,.18);
+}
+
+.leader h4{
+margin-top:12px;
+
+font-size:16px;
+
+font-weight:700;
+
+line-height:1.4;
+
+color:#334155;
+}
+
+/* =========================
+   TITLE
+========================= */
+.hero h1{
+font-size:clamp(3rem,6vw,6rem);
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:15px;
+
+color:#1e3a8a;
+
+position:relative;
+z-index:2;
+}
+
+/* =========================
+   TAGLINE
+========================= */
+.tagline{
+font-size:1.5rem;
+
+font-weight:600;
+
+color:#475569;
+
+position:relative;
+z-index:2;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card{
+padding:40px;
+border-radius:28px;
+margin-top:22px;
+
+transition:.3s ease;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h2{
+font-size:2rem;
+
+margin-bottom:18px;
+
+color:#2563eb;
+}
+
+/* =========================
+   TEXT
+========================= */
+p,
+li,
+blockquote{
+font-size:1.35rem;
+font-weight:500;
+}
+
+ol{
+padding-left:30px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+.quote{
+background:
+rgba(219,234,254,.65);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+text-align:center;
+
+font-size:2.5rem;
+
+font-weight:800;
+
+padding:50px 0;
+
+color:#1d4ed8;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media(max-width:1024px){
+
+.hero h1{
+font-size:4rem;
+}
+
+.leader img{
+width:100px;
+height:100px;
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+
+.container{
+padding:15px;
+}
+
+.hero{
+padding:35px 20px;
+}
+
+.hero-leaders{
+gap:20px;
+}
+
+.leader{
+max-width:100px;
+}
+
+.leader img{
+width:85px;
+height:85px;
+border-radius:18px;
+}
+
+.leader h4{
+font-size:12px;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.tagline{
+font-size:1.1rem;
+}
+
+.card{
+padding:25px;
+}
+
+h2{
+font-size:1.6rem;
+}
+
+p,
+li,
+blockquote{
+font-size:1.1rem;
+}
+
+.footer{
+font-size:1.5rem;
+}
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media(max-width:480px){
+
+.hero h1{
+font-size:2rem;
+}
+
+.tagline{
+font-size:1rem;
+}
+
+.leader img{
+width:75px;
+height:75px;
+}
+
+.leader h4{
+font-size:11px;
+}
+
+p,
+li,
+blockquote{
+font-size:1rem;
+}
+
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="container">
+
+<section class="hero">
+<div class="hero-leaders">
+<div class="leader">
+<img src="Dr.Ambedkar.png">
+<h4>Dr. Bhimrao Ramji Ambedkar </h4>
+</div>
+<div class="leader">
+<img src="Birsa Munda.jpg">
+<h4>Jannayak Birsa Munda</h4>
+</div>
+<div class="leader">
+<img src="Jyotibao Phule.jpg">
+<h4>Mahatma Jyotirao Govindrao Phule</h4>
+</div>
+<div class="leader">
+<img src="Periyar e Ramasamy.png">
+<h4>Periyar Erode Venkatappa Ramasamy </h4>
+</div>
+</div>
+<h1>Mulnivasi Vidyarthi Sangh</h1>
+<p class="tagline">Educate • Organize • Agitate</p>
+</section>
+
+<div class="card"><h2>About MVS </h2>
+<p>Mulnivasi Vidyarthi Sangh (MVS) is the student wing of BAMCEF, working to organize, educate, and empower students from SC, ST, OBC, Minority, and other marginalized communities across India. The organization is committed to building an aware, confident, and socially responsible student community that upholds the values of equality, justice, fraternity, and constitutional democracy.
+Inspired by the teachings of Mahatma Jyotiba Phule, Chhatrapati Shahu Maharaj, Periyar E. V. Ramasamy, and Dr. B. R. Ambedkar, MVS promotes education, leadership development, social awareness, and student participation in nation-building. The organization believes that students are the driving force of social transformation and works to equip them with knowledge, skills, and a strong sense of responsibility towards society.
+Through seminars, workshops, educational campaigns, leadership training programs, and community engagement initiatives, MVS strives to create opportunities for students to grow academically, socially, and culturally. The organization also advocates for issues related to education, employment, health, and social empowerment, with the vision of building an inclusive, progressive, and equitable society for all.
+<br>
+<br>
+मूलनिवासी विद्यार्थी संघ (MVS), BAMCEF का छात्र संगठन (Student Wing) है, जो भारत के अनुसूचित जाति (SC), अनुसूचित जनजाति (ST), अन्य पिछड़ा वर्ग (OBC), अल्पसंख्यक तथा अन्य वंचित समुदायों के विद्यार्थियों को संगठित, शिक्षित एवं सशक्त बनाने के लिए कार्य करता है। संगठन का उद्देश्य विद्यार्थियों में जागरूकता, आत्मविश्वास, नेतृत्व क्षमता तथा सामाजिक उत्तरदायित्व का विकास करना है, ताकि वे समानता, न्याय, बंधुत्व और संवैधानिक मूल्यों पर आधारित समाज के निर्माण में सक्रिय भूमिका निभा सकें।
+मूलनिवासी विद्यार्थी संघ, महात्मा ज्योतिबा फुले, छत्रपति शाहू महाराज, पेरियार ई. वी. रामासामी तथा डॉ. भीमराव रामजी आंबेडकर के विचारों और संघर्षों से प्रेरणा लेकर विद्यार्थियों में शिक्षा, सामाजिक चेतना, नेतृत्व विकास और राष्ट्र निर्माण की भावना को प्रोत्साहित करता है। संगठन का मानना है कि विद्यार्थी सामाजिक परिवर्तन की सबसे महत्वपूर्ण शक्ति हैं और उनके समग्र विकास से ही एक सशक्त एवं प्रगतिशील समाज का निर्माण संभव है।
+सेमिनार, कार्यशालाओं, शैक्षणिक अभियानों, नेतृत्व प्रशिक्षण कार्यक्रमों तथा सामाजिक जागरूकता गतिविधियों के माध्यम से MVS विद्यार्थियों को शैक्षणिक, सामाजिक एवं सांस्कृतिक रूप से विकसित करने का कार्य करता है। साथ ही, संगठन शिक्षा, रोजगार, स्वास्थ्य, सामाजिक न्याय एवं सशक्तिकरण से जुड़े मुद्दों पर विद्यार्थियों को जागरूक एवं संगठित करते हुए एक समतामूलक, समावेशी और प्रगतिशील समाज के निर्माण के लिए निरंतर प्रयासरत है।</p></div>
+<div class="card"><h2>1. Formation </h2><p>Mulnivasi Vidyarthi Sangh (MVS) was formed as an all-India student organization to unite students belonging to SC, ST, OBC, and converted minority communities under a common platform. It emerged through the efforts of the Phule-Ambedkarite movement and the guidance of BAMCEF, 
+    recognizing the need for an independent student movement that could address educational inequality, social discrimination, and lack of representation in academic institutions. The organization was established to develop awareness, leadership, unity, and social responsibility among students while preparing them to contribute towards social transformation and nation-building. 
+    MVS believes that students are the future leaders of society and therefore must be organized to safeguard constitutional values of justice, equality, liberty, and fraternity. The foundation of MVS was officially laid to provide a strong national platform for Mulnivasi Bahujan students and it was formally registered in Delhi on 13 July 2017.
+<br>
+<br>
+    मूलनिवासी विद्यार्थी संघ (MVS) की स्थापना अनुसूचित जाति (SC), अनुसूचित जनजाति (ST), अन्य पिछड़ा वर्ग (OBC) तथा धर्मांतरित अल्पसंख्यक समुदायों के विद्यार्थियों को एक साझा राष्ट्रीय मंच पर संगठित करने के उद्देश्य से की गई। 
+यह संगठन फुले-आंबेडकरवादी आंदोलन के विस्तार और BAMCEF के मार्गदर्शन से विकसित हुआ। इसकी आवश्यकता इसलिए महसूस की गई क्योंकि देश के शैक्षणिक संस्थानों में सामाजिक असमानता, भेदभाव, प्रतिनिधित्व की कमी तथा विद्यार्थियों की समस्याओं के समाधान के लिए एक स्वतंत्र और सशक्त छात्र संगठन का अभाव था।
+MVS का गठन विद्यार्थियों में नेतृत्व क्षमता, सामाजिक चेतना, संगठनात्मक शक्ति और संवैधानिक मूल्यों के प्रति प्रतिबद्धता विकसित करने के लिए किया गया। 
+संगठन का मानना है कि विद्यार्थी ही देश और समाज का भविष्य हैं, इसलिए उन्हें न्याय, समानता, स्वतंत्रता और बंधुत्व के सिद्धांतों पर संगठित कर सामाजिक परिवर्तन की दिशा में अग्रसर करना आवश्यक है। 
+MVS का उद्देश्य मूलनिवासी बहुजन विद्यार्थियों को एक राष्ट्रीय पहचान प्रदान करना, उनके अधिकारों की रक्षा करना तथा उन्हें समाज और राष्ट्र के निर्माण में सक्रिय नेतृत्व की भूमिका निभाने के लिए तैयार करना है। 
+इसी उद्देश्य से मूलनिवासी विद्यार्थी संघ की नींव रखी गई और इसका आधिकारिक पंजीकरण 13 जुलाई 2017 को दिल्ली में किया गया।
+</p></div>
+    <div class="card"><h2>2. Inspiration & Direction</h2><p>Mulnivasi Vidyarthi Sangh (MVS) draws its inspiration and ideological direction from the transformative thoughts, struggles, and social reform movements led by great leaders such as Mahatma Jyotiba Phule, Savitribai Phule, Chhatrapati Shahu Maharaj, Periyar E.V. Ramasamy, and Dr. B.R. Ambedkar. These visionaries dedicated their lives to fighting caste-based discrimination, promoting education, defending human dignity, and establishing a society based on equality, justice, and fraternity.
+
+MVS follows their legacy by encouraging students to become socially conscious, intellectually empowered, and committed to constitutional values. The organization believes that education is the most powerful tool for social transformation and that students must play an active role in building a democratic, inclusive, and progressive society. Inspired by Dr. Ambedkar's call to “Educate, Organize, and Agitate,” MVS strives to develop leadership among students and prepare them to contribute towards the empowerment of marginalized communities and the realization of social justice for all.
+<br>
+<br>
+मूलनिवासी विद्यार्थी संघ (MVS) अपनी प्रेरणा और वैचारिक दिशा महात्मा ज्योतिबा फुले, क्रांतिज्योति सावित्रीबाई फुले, छत्रपति शाहू महाराज, पेरियार ई.वी. रामासामी तथा भारत रत्न डॉ. भीमराव आंबेडकर जैसे महान समाज सुधारकों और क्रांतिकारी विचारकों के जीवन, संघर्ष और सिद्धांतों से प्राप्त करता है। इन महापुरुषों ने अपना सम्पूर्ण जीवन सामाजिक अन्याय, जातिगत भेदभाव, अशिक्षा और शोषण के विरुद्ध संघर्ष करते हुए समानता, स्वाभिमान, मानवाधिकार और सामाजिक न्याय की स्थापना के लिए समर्पित किया।
+
+MVS उनके विचारों को आगे बढ़ाते हुए विद्यार्थियों में शिक्षा, वैज्ञानिक सोच, आत्मसम्मान, सामाजिक जागरूकता और संवैधानिक मूल्यों के प्रति निष्ठा विकसित करने का कार्य करता है। संगठन का विश्वास है कि शिक्षा केवल व्यक्तिगत उन्नति का माध्यम नहीं, बल्कि सामाजिक परिवर्तन का सबसे शक्तिशाली साधन है। इसी कारण MVS विद्यार्थियों को संगठित कर उनमें नेतृत्व क्षमता विकसित करने तथा समाज के वंचित, शोषित और पिछड़े वर्गों के उत्थान के लिए कार्य करने हेतु प्रेरित करता है।
+
+डॉ. बाबासाहेब आंबेडकर के प्रसिद्ध संदेश "शिक्षित बनो, संगठित बनो, संघर्ष करो" को मार्गदर्शक सिद्धांत मानते हुए MVS एक ऐसे समाज के निर्माण की दिशा में कार्य करता है जहाँ न्याय, समानता, स्वतंत्रता, बंधुत्व और मानवीय गरिमा केवल आदर्श न होकर वास्तविकता बन सके। संगठन का उद्देश्य विद्यार्थियों को सामाजिक परिवर्तन का वाहक बनाना तथा उन्हें राष्ट्र निर्माण में सक्रिय और जिम्मेदार नेतृत्व प्रदान करने के लिए तैयार करना है।
+</p></div>
+<div class="card quote"><h2>3. Message of Babasaheb</h2><blockquote>Dr. B.R. Ambedkar believed that education should not be used only for personal success but also for the upliftment of society. He encouraged students to become responsible leaders who work for justice, equality, and human dignity. His famous message, “Educate, Organize, Agitate,” serves as the guiding principle of MVS. The organization inspires students to use their knowledge and skills for social change and community empowerment.
+<br>
+<br>
+डॉ. बी.आर. आंबेडकर का मानना था कि शिक्षा केवल व्यक्तिगत सफलता के लिए नहीं, बल्कि समाज के उत्थान के लिए भी होनी चाहिए। उन्होंने विद्यार्थियों को न्याय, समानता और मानवीय गरिमा के लिए कार्य करने वाले जिम्मेदार नेता बनने की प्रेरणा दी। उनका प्रसिद्ध संदेश "शिक्षित बनो, संगठित बनो, संघर्ष करो" MVS का मार्गदर्शक सिद्धांत है। यह संगठन विद्यार्थियों को अपने ज्ञान और क्षमता का उपयोग सामाजिक परिवर्तन तथा समुदाय के सशक्तिकरण के लिए करने के लिए प्रेरित करता है।
+</blockquote></div>
+<div class="card"><h2>4. Status of Students in University Campuses</h2><p>Students from marginalized and underrepresented communities often face challenges such as social discrimination, financial difficulties, limited access to educational resources, and lack of representation in academic institutions. These barriers can affect their academic growth and opportunities. MVS recognizes these issues and works to support students through awareness, guidance, leadership development, and collective action. The organization aims to create an inclusive environment where every student can achieve academic excellence and contribute positively to society.
+    <br>
+    <br>
+वंचित और कम प्रतिनिधित्व वाले समुदायों के विद्यार्थियों को आज भी सामाजिक भेदभाव, आर्थिक कठिनाइयों, शैक्षणिक संसाधनों की कमी तथा प्रतिनिधित्व के अभाव जैसी अनेक चुनौतियों का सामना करना पड़ता है। ये समस्याएँ उनके शैक्षणिक विकास और अवसरों को प्रभावित करती हैं। MVS इन चुनौतियों को पहचानते हुए विद्यार्थियों में जागरूकता, मार्गदर्शन, नेतृत्व क्षमता और संगठनात्मक शक्ति विकसित करने का कार्य करता है। संगठन का उद्देश्य ऐसा समावेशी वातावरण बनाना है जहाँ प्रत्येक विद्यार्थी शिक्षा में उत्कृष्टता प्राप्त कर सके और समाज के विकास में योगदान दे सके।</p></div>
+<div class="card"><h2>5. Aim</h2><p>The primary aim of MVS is to organize, educate, and empower students from Mulnivasi Bahujan communities across the country. The organization works to develop leadership qualities, promote social awareness, protect constitutional rights, and encourage students to actively contribute towards community development and nation-building.
+<br>
+    <br>
+MVS का मुख्य उद्देश्य देशभर के मूलनिवासी बहुजन विद्यार्थियों को संगठित, शिक्षित और सशक्त बनाना है। संगठन विद्यार्थियों में नेतृत्व क्षमता, सामाजिक जागरूकता और संवैधानिक मूल्यों के प्रति प्रतिबद्धता विकसित करने का कार्य करता है, ताकि वे समाज और राष्ट्र निर्माण में सकारात्मक भूमिका निभा सकें।</p></div>
+<div class="card"><h2>6. Objectives</h2><p>MVS seeks to establish student units in educational institutions and promote educational excellence, leadership development, and social responsibility. The organization works to protect students' constitutional rights, create awareness about equality and social justice, organize seminars and workshops, encourage scientific thinking and entrepreneurship, and support students facing discrimination or injustice.
+<br>
+    <br>
+MVS का उद्देश्य शैक्षणिक संस्थानों में अपनी इकाइयों की स्थापना कर विद्यार्थियों में शिक्षा, नेतृत्व और सामाजिक जिम्मेदारी की भावना विकसित करना है। संगठन विद्यार्थियों के संवैधानिक अधिकारों की रक्षा, सामाजिक न्याय और समानता के प्रति जागरूकता, सेमिनार एवं कार्यशालाओं का आयोजन, वैज्ञानिक सोच और उद्यमिता को बढ़ावा देने तथा अन्याय का सामना कर रहे विद्यार्थियों को सहयोग प्रदान करने के लिए कार्य करता है।</p></div>
+<div class="card"><h2>7. Membership</h2><p>Membership of MVS is open to all students who believe in the aims, objectives, and values of the organization. Members are encouraged to actively participate in organizational activities, uphold constitutional values, and contribute towards educational and social progress.
+<br>
+    <br>
+MVS की सदस्यता उन सभी विद्यार्थियों के लिए खुली है जो संगठन के उद्देश्यों, मूल्यों और विचारों में विश्वास रखते हैं। सदस्यों को संगठनात्मक गतिविधियों में सक्रिय भागीदारी करने, संवैधानिक मूल्यों का पालन करने तथा शैक्षणिक और सामाजिक प्रगति में योगदान देने के लिए प्रेरित किया जाता है।</p></div>
+<div class="card"><h2>8. History & Identity</h2><p>MVS encourages students to understand their history, social identity, and constitutional rights. The organization promotes awareness about the struggles and contributions of great social reformers and inspires students to develop self-respect, confidence, and a sense of responsibility towards society.
+<br>
+    <br>
+MVS विद्यार्थियों को अपने इतिहास, सामाजिक पहचान और संवैधानिक अधिकारों को समझने के लिए प्रेरित करता है। संगठन महान समाज सुधारकों के संघर्षों और योगदानों के प्रति जागरूकता बढ़ाकर विद्यार्थियों में आत्मसम्मान, आत्मविश्वास और सामाजिक जिम्मेदारी की भावना विकसित करता है।</p></div>
+<div class="card"><h2>9. Educational Equality</h2><p>MVS believes that education is a fundamental right and should be accessible to every student regardless of caste, class, gender, religion, or economic background. The organization advocates equal educational opportunities, affordable learning resources, and a fair academic environment where all students can learn, grow, and achieve their full potential. MVS works to eliminate barriers that prevent marginalized students from accessing quality education and encourages policies that promote inclusiveness, equity, and academic excellence.
+<br>
+    <br>
+MVS का मानना है कि शिक्षा प्रत्येक व्यक्ति का मौलिक अधिकार है और यह जाति, वर्ग, लिंग, धर्म या आर्थिक स्थिति के आधार पर किसी से भी वंचित नहीं की जानी चाहिए। संगठन सभी विद्यार्थियों के लिए समान शैक्षणिक अवसर, गुणवत्तापूर्ण शिक्षा और आवश्यक संसाधनों तक समान पहुँच की वकालत करता है। MVS ऐसी बाधाओं को दूर करने के लिए कार्य करता है जो वंचित वर्गों के विद्यार्थियों को शिक्षा से दूर करती हैं तथा समावेशी, न्यायपूर्ण और उत्कृष्ट शिक्षा व्यवस्था को बढ़ावा देता है।</p></div>
+<div class="card"><h2>10. Employment & Economy</h2><p>Recognizing unemployment as a major challenge for youth, MVS promotes skill development, entrepreneurship, employment opportunities, and economic empowerment. The organization encourages students to become self-reliant and financially independent through education, training, and networking initiatives.
+<br>
+    <br>
+युवाओं के सामने बेरोजगारी को एक बड़ी चुनौती मानते हुए MVS कौशल विकास, उद्यमिता, रोजगार के अवसरों और आर्थिक सशक्तिकरण को बढ़ावा देता है। संगठन विद्यार्थियों को शिक्षा, प्रशिक्षण और सहयोग के माध्यम से आत्मनिर्भर एवं आर्थिक रूप से मजबूत बनने के लिए प्रेरित करता है।</p></div>
+<div class="card"><h2>11. Health & Education</h2><p>MVS believes that quality education and accessible healthcare are essential for social progress and human development. The organization advocates equal educational opportunities, affordable learning resources, and better public health facilities for all sections of society.
+<br>
+    <br>
+MVS का मानना है कि गुणवत्तापूर्ण शिक्षा और सुलभ स्वास्थ्य सेवाएँ सामाजिक विकास की आधारशिला हैं। संगठन सभी वर्गों के लिए समान शैक्षणिक अवसर, किफायती शिक्षा संसाधन और बेहतर सार्वजनिक स्वास्थ्य सुविधाओं की वकालत करता है।</p></div>
+<div class="card"><h2>12. Development & Sustainability</h2>MVS supports inclusive and sustainable development that benefits all sections of society. The organization believes that development should be balanced, socially just, and environmentally responsible so that future generations can enjoy a better quality of life.
+<br>
+    <br>
+MVS ऐसे समावेशी और सतत विकास का समर्थन करता है जिसका लाभ समाज के सभी वर्गों तक पहुँचे। संगठन का मानना है कि विकास सामाजिक न्याय और पर्यावरण संरक्षण के साथ संतुलित होना चाहिए, ताकि आने वाली पीढ़ियों के लिए बेहतर भविष्य सुनिश्चित किया जा सके।</p></div>
+<div class="card"><h2>13. Women, Children & Inclusion</h2><p>MVS is committed to the empowerment of women, children, differently-abled persons, and third-gender communities. The organization promotes equal opportunities, dignity, representation, and protection of rights while encouraging students to contribute towards building an inclusive society.
+<br>
+    <br>
+MVS महिलाओं, बच्चों, दिव्यांग व्यक्तियों और तृतीय लिंग समुदाय के सशक्तिकरण के लिए प्रतिबद्ध है। संगठन समान अवसर, सम्मान, प्रतिनिधित्व और अधिकारों की सुरक्षा को बढ़ावा देता है तथा विद्यार्थियों को एक समावेशी और न्यायपूर्ण समाज के निर्माण में योगदान देने के लिए प्रेरित करता है।</p></div>
+<div class="card"><h2>14. Programme & Policy</h2><p>The organizational philosophy of MVS is based on Dr. Ambedkar's principle of “Educate, Organize, Agitate.” The organization conducts leadership development programs, educational guidance sessions, awareness campaigns, seminars, cultural activities, sports events, and community engagement initiatives to empower students and society.
+<br>
+    <br>
+MVS की कार्यप्रणाली डॉ. आंबेडकर के "शिक्षित बनो, संगठित बनो, संघर्ष करो" सिद्धांत पर आधारित है। संगठन नेतृत्व विकास, शैक्षणिक मार्गदर्शन, जागरूकता अभियान, सेमिनार, सांस्कृतिक कार्यक्रम, खेल गतिविधियाँ और सामुदायिक सहभागिता के माध्यम से विद्यार्थियों को सशक्त बनाने का कार्य करता है।</p></div>
+<div class="card"><h2>15. Appeal</h2><p>MVS appeals to students, youth, and socially conscious individuals to join this movement and contribute their time, talent, and dedication towards building an educated, organized, and empowered society. Together, we can strengthen the Mulnivasi Bahujan movement and promote justice, equality, and human dignity.
+<br>
+    <br>
+MVS विद्यार्थियों, युवाओं और सामाजिक रूप से जागरूक नागरिकों से आह्वान करता है कि वे इस आंदोलन से जुड़कर अपने समय, प्रतिभा और समर्पण का योगदान दें। सामूहिक प्रयासों के माध्यम से हम एक शिक्षित, संगठित और सशक्त समाज का निर्माण कर सकते हैं तथा न्याय, समानता और मानवीय गरिमा के मूल्यों को मजबूत बना सकते हैं।</p></div>
+
+<div class="footer">Jai Bhim | Jai Mulnivasi | Jai Bharat
+    <br>
+    © 2026 Mulnivasi Vidyarthi Sangh
+</div>
+
+</div>
+<script>
+window.addEventListener('scroll',()=>{
+const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+document.getElementById('progress').style.width=(document.documentElement.scrollTop/h)*100+'%';
+});
+</script>
+</body>
+</html>
